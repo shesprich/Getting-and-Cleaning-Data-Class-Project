@@ -4,9 +4,13 @@
 # Load dplyr
 library(dplyr)
 
-# Source the load_data.R script which conatins the loadData function for loading
+# Source the load_data.R script which contains the loadData function for loading
 # and doing the initial processing of the data.
 source("load_data.R")
+
+# Source the get_subject_averages.R script which contains the getSubjectAverages
+# function for calculating the activity wise and subject wise averages
+source("get_subject_averages.R")
 
 # Define paths to both test and train data
 base_path <- "UCI_HAR_Dataset"
@@ -58,4 +62,20 @@ names(tidyData) <- features
 
 # Now let's update the activity variable to a factor variable with descriptive 
 # level names
+tidyData <- mutate(tidyData, Activity = factor(Activity, labels = c("Walking", "Walking_Upstairs", "Walking_Downstairs", "Sitting", "Standing", "Laying")) )
 
+# Finally, we need to calculate the averages for each subject for each activity.
+# Let's start by subsetting data by subject
+
+subjectAverages <- data.frame()
+
+for (subjects in 1:30) {
+  x <- getSubjectAverages(tidyData, subjects)
+  subjectAverages <- rbind(subjectAverages, x)
+}
+
+# get rid of our intermediate variable x
+rm(x)
+
+save(tidyData, file = "tidyData.Rda")
+save(subjectAverages, file = "subjectAverage.Rda")
