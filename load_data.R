@@ -32,7 +32,7 @@ loadData <- function(data_path) {
   
   # Rename y and z manually
   names(y) <- "Activity"
-  names(z) <- "Subject ID"
+  names(z) <- "SubjectID"
   
   # Subset using grepl to retain only mean and std variables
   x <- x[,grepl("mean\\(\\)|std\\(\\)",features)]
