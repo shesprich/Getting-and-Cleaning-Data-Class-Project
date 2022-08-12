@@ -12,10 +12,20 @@ source("load_data.R")
 # function for calculating the activity wise and subject wise averages
 source("get_subject_averages.R")
 
-# Define paths to both test and train data
-base_path <- "UCI_HAR_Dataset"
-test_path <- paste(base_path, "test", sep = "/")
-train_path <- paste(base_path, "train", sep = "/")
+
+#------------------------------------------------------------------------------
+# Updated code. The project instructions did not specify that the script
+# needed to load data from the current working directory, but the submission
+# instructions do. I commented out then updated this section of the code
+# to comply with the updated instructions.
+#------------------------------------------------------------------------------
+## Define paths to both test and train data
+#base_path <- "UCI_HAR_Dataset"
+#test_path <- paste(base_path, "test", sep = "/")
+#train_path <- paste(base_path, "train", sep = "/")
+
+test_path <- "test"
+train_path <- "train"
 
 # Load the data using the loadData function from load_data.R
 testData <- loadData(test_path)
@@ -79,3 +89,12 @@ rm(x)
 
 save(tidyData, file = "tidyData.Rda")
 save(subjectAverages, file = "subjectAverage.Rda")
+
+# ------------------------------------------------------------------------------
+# Updtaed code. The project instructions also did not specify what format the
+# data needed to be in, but the submission instructions did. So I have updated
+# the code to save the data in the format requested by the submission
+# instructions.
+# ------------------------------------------------------------------------------
+
+write.table(subjectAverages, file = "subjectAverages.txt", row.name=FALSE)

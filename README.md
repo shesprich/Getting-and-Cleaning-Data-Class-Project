@@ -35,7 +35,7 @@ tidyData.Rda - An R data frame containing the tidy dataset which results from co
 
 subjectAverage.Rda - An R data frame containing the tidy dataset described in step 5 in the above project description
 
-CodeBook.md - Contains a detailed description of all analyses performed to transform the raw data to the tidy data
+CodeBook.md - Contains a detailed description of all analyses performed to transform the raw data to the tidy data, as well as a description of all the variables and data contained within the repo. 
 
 run_analysis.R - The primary script which (using the functions contained in load_data.R and get_subject_averages.R) converts the raw data in the UCI_HAR_Dataset directory into the data frames found in tidyData.Rda and subjectAverage.Rda
 
