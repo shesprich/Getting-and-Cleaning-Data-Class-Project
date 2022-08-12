@@ -8,7 +8,7 @@ domain-type-sensor-statistic-(jerk)-component
 
 In this conventions domain is either TimeDomain or FrequencyDomain, type is either Body or Gravity, sensor is either Accelerometer or StandardDeviation, jerk will be present if the variable represnets the calulated jerk, and component is either X, Y, Z, or Magnitude. So for example the variable: TimeDomain-Gravity-Accelerometer-Mean-X would be the mean of the gravitational component of the time domain signal recorded in the x direction by the accelerometer, whereas the variable: FrequencyDomain-Body-Gyroscope-Jerk-StandardDeviation-Magnitude is the standard deviation of the FFT of magnitude of the calculated Jerk of the motion body recorded by the gyroscope.
 
-There are two additional variable Activity and SubjectID which denote the activity and subject ID respectively.
+There are two additional variables: Activity and SubjectID, which contain the activity and subject ID respectively.
 
 # Data
 
