@@ -8,13 +8,15 @@ domain-type-sensor-statistic-(jerk)-component
 
 In this conventions domain is either TimeDomain or FrequencyDomain, type is either Body or Gravity, sensor is either Accelerometer or StandardDeviation, jerk will be present if the variable represents the calculated jerk, and component is either X, Y, Z, or Magnitude. So for example the variable: TimeDomain-Gravity-Accelerometer-Mean-X would be the mean of the gravitational component of the time domain signal recorded in the x direction by the accelerometer, whereas the variable: FrequencyDomain-Body-Gyroscope-Jerk-StandardDeviation-Magnitude is the standard deviation of the FFT of magnitude of the calculated Jerk of the motion body recorded by the gyroscope.
 
-There are two additional variable Activity and SubjectID which denote the activity and subject ID respectively.
+There are two additional variables: Activity and SubjectID, which contain the activity and subject ID respectively.
 
 # Data
 
 tidyData.Rda is a tidy data set which contains the merged training and test sets of the UCI_HAR_Dataset. This data set also removes all data which is not a mean or standard deviation. Variable names have been updated to follow the above conventions so as to be more descriptive
 
 subjectAverage.Rda is a tidy data set which contains the subject wise and activity wise averages of tideData.Rda.
+
+subjectAverages.txt is the same data set contained in subjectAverage.Rda, but in .txt format.
 
 # Transformations
 
