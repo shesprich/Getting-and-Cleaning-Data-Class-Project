@@ -40,7 +40,7 @@ tidyData.Rda - An R data frame containing the tidy dataset which results from co
 subjectAverage.Rda - An R data frame containing the tidy dataset described in step 5 in the above project description.
 
 CodeBook.md - Contains a detailed description of all analyses performed to transform the raw data to the tidy data, as well as a description of all the variables and data contained within the repo. 
-=======
+
 subjectAverages.txt - A .txt file written to comply with additional instructions found on the submission page.
 
 CodeBook.md - Contains a detailed description of all analyses performed to transform the raw data to the tidy data.
