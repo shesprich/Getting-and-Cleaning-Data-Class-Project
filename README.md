@@ -3,7 +3,7 @@ Class project for the Coursera course Getting and Cleaning Data
 
 # Author's note:
 
-The original insturctions do not state two things. First, that all data loaded in run_analysis.R need to be contained in the working directory. Second, that your tidy dataset needs to be written using write.table() to a .txt file. I wrote all my scripts, README.md, and CodeBook.md under the assumptions that data would be found in the UCI_HAR_Dataset subdirectory. I have updated the scripts so they will work with data found in the working directory. However, I spent a few hours writing detailed and thourough *.md files, and I have run out of time/energy to update those. So, if you will please excuse the outdated references to UCI_HAR_Dataset in those files, I would be much appreciated. Additionally, you can ignore the tidyData.Rda and subjectAverage.Rda files.
+The original instructions do not state two things. First, that all data loaded in run_analysis.R need to be contained in the working directory. Second, that your tidy dataset needs to be written using write.table() to a .txt file. I wrote all my scripts, README.md, and CodeBook.md under the assumptions that data would be found in the UCI_HAR_Dataset subdirectory. I have updated the scripts so they will work with data found in the working directory. However, I spent a few hours writing detailed and thorough *.md files, and I have run out of time/energy to update those. So, if you will please excuse the outdated references to UCI_HAR_Dataset in those files, I would be much appreciated. Additionally, you can ignore the tidyData.Rda and subjectAverage.Rda files.
 
 # Description of Project
 
