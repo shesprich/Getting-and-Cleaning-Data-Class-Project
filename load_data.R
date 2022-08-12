@@ -2,7 +2,7 @@ loadData <- function(data_path) {
   # Since the train and test data need basically the same processing a single 
   # function can apply to both sets.
   
-  # The test files are [xy]_test.txt and train files are [xy]_train.txt so we
+  # The test files are [Xy]_test.txt and train files are [Xy]_train.txt so we
   # first need to determine the filename for the path we were give.
   files <- list.files(data_path)
   
@@ -16,21 +16,28 @@ loadData <- function(data_path) {
   y_file <- files[grepl("y_[a-z]+",files)]
   y_file <- paste(data_path, y_file, sep = "/")
   
+  # We need subject IDs for the data as well
+  subject_file <- files[grepl("subject_[a-z]+",files)]
+  subject_file <- paste(data_path, subject_file, sep = "/")
+  
   # Read in data
   x <- read.table(x_file, header = FALSE)
   y <- read.table(y_file, header = FALSE)
+  z <- read.table(subject_file, header = FALSE)
   
   # Load in features so we can rename x
   features <- read.table("UCI_HAR_Dataset/features.txt")
   features <- features[,2]
   names(x) <- features
   
-  # Rename y manually
+  # Rename y and z manually
   names(y) <- "Activity"
+  names(z) <- "Subject ID"
   
-  # Subset using grepl to reatain only mean and std variables
-  x <- x[,grepl("mean|std",features)]
+  # Subset using grepl to retain only mean and std variables
+  x <- x[,grepl("mean\\(\\)|std\\(\\)",features)]
   
-  # cbind x and y data to return a single data set
-  xy <- cbind(x,y)
+  # cbind x, y and z data to return a single data set
+  xy <- cbind(x, y)
+  xyz <- cbind(xy, z)
 }
